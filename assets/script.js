@@ -17,6 +17,9 @@ const slides = [
 	}
 ]
 
+let bulletPoint = document.querySelectorAll(".dot")
+
+
 //création variable
 
 const totalSlides = slides.length - 1
@@ -47,16 +50,19 @@ buttonArrowRight.addEventListener("click", () => {
 	} else {
 		visualSlide = 0
 	}
-
 	let bannerImg = document.querySelector(".banner-img")
 	bannerImg.src = "./assets/images/slideshow/" + slides[visualSlide].image// permet de changer d'image au clic
+
 	let tagLine = document.querySelector("p")
 	tagLine.innerHTML = slides[visualSlide].tagLine // idem permet de changer le texte de l'image au clic
 
+	let dotSelected = document.querySelector(".dot_selected")
+	dotSelected.classList.remove("dot_selected")
+
+	bulletPoint[visualSlide].classList.add("dot_selected")// permet de voir le dot blanc au changement de l'image
 
 })
 
-let bulletPoint = document.querySelectorAll(".dot")
-console.log(bulletPoint)
-bulletPoint.classlist.add(".dot_selected")
+
+
 
