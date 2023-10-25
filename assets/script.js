@@ -25,21 +25,6 @@ let bulletPoint = document.querySelectorAll(".dot")
 const totalSlides = slides.length - 1
 let visualSlide = 0
 
-//mémo: action au clic sur fléche gauche
-// on veut au clic que image + tagLine + dot reculent de -1
-const buttonArrowLeft = document.querySelector(".arrow_left")
-buttonArrowLeft.addEventListener("click", () => {
-	if (visualSlide <= totalSlides && visualSlide > 0) {
-		visualSlide--
-	} else {
-		visualSlide = totalSlides
-	}
-	let bannerImg = document.querySelector(".banner-img")
-	bannerImg.src = "./assets/images/slideshow/" + slides[visualSlide].image
-	let tagLine = document.querySelector("p")
-	tagLine.innerHTML = slides[visualSlide].tagLine
-})
-
 //mémo: action au clic sur fléche droite
 // on veut au clic que (image + tagLine + dot) avance de +1
 
@@ -62,6 +47,29 @@ buttonArrowRight.addEventListener("click", () => {
 	bulletPoint[visualSlide].classList.add("dot_selected")// permet de voir le dot blanc au changement de l'image
 
 })
+
+//mémo: action au clic sur fléche gauche
+// on veut au clic que image + tagLine + dot reculent de -1
+const buttonArrowLeft = document.querySelector(".arrow_left")
+buttonArrowLeft.addEventListener("click", () => {
+	if (visualSlide <= totalSlides && visualSlide > 0) {
+		visualSlide--
+	} else {
+		visualSlide = totalSlides
+	}
+	let bannerImg = document.querySelector(".banner-img")
+	bannerImg.src = "./assets/images/slideshow/" + slides[visualSlide].image
+	let tagLine = document.querySelector("p")
+	tagLine.innerHTML = slides[visualSlide].tagLine
+
+	let dotSelected = document.querySelector(".dot_selected")
+	dotSelected.classList.remove("dot_selected")
+
+	bulletPoint[visualSlide].classList.add("dot_selected")// permet de voir le dot blanc au changement de l'image
+
+})
+
+
 
 
 
