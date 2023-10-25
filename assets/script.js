@@ -17,13 +17,14 @@ const slides = [
 	}
 ]
 
-let bulletPoint = document.querySelectorAll(".dot")
+
 
 
 //création variable
 
 const totalSlides = slides.length - 1
 let visualSlide = 0
+let bulletPoint = document.querySelectorAll(".dot")
 
 //mémo: action au clic sur fléche droite
 // on veut au clic que (image + tagLine + dot) avance de +1
@@ -45,7 +46,6 @@ buttonArrowRight.addEventListener("click", () => {
 	dotSelected.classList.remove("dot_selected")
 
 	bulletPoint[visualSlide].classList.add("dot_selected")// permet de voir le dot blanc au changement de l'image
-
 })
 
 //mémo: action au clic sur fléche gauche
@@ -66,7 +66,6 @@ buttonArrowLeft.addEventListener("click", () => {
 	dotSelected.classList.remove("dot_selected")
 
 	bulletPoint[visualSlide].classList.add("dot_selected")// permet de voir le dot blanc au changement de l'image
-
 })
 
 
