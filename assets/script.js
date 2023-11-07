@@ -23,8 +23,6 @@ const totalSlides = slides.length;
 let visualSlide = 0;
 let bulletPoint = document.querySelectorAll(".dot");
 
-//mémo: action au clic sur fléche droite
-// on veut au clic que (image + tagLine + dot) avance de +1
 
 function goToImage() {
   let bannerImg = document.querySelector(".banner-img");
@@ -38,6 +36,10 @@ function goToImage() {
 
   bulletPoint[visualSlide].classList.add("dot_selected"); // permet de voir le dot blanc au changement de l'image
 }
+
+//mémo: action au clic sur fléche droite
+// on veut au clic que (image + tagLine + dot) avance de +1
+
 
 const buttonArrowRight = document.querySelector(".arrow_right");
 buttonArrowRight.addEventListener("click", () => {
